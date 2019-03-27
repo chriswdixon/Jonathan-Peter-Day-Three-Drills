@@ -128,3 +128,57 @@ characters.find(char=>char.Nickname === 'aragorn').describe();
 let showOnlyHobbits = characters.filter(char=>char.Race==='Hobbit');
 let awesomeAttackers = characters.filter(char=>char.Attack > 5);
 
+const HEROES = [
+    { id: 1, name: 'Captain America', squad: 'Avengers' },
+    { id: 2, name: 'Iron Man', squad: 'Avengers' },
+    { id: 3, name: 'Spiderman', squad: 'Avengers' },
+    { id: 4, name: 'Superman', squad: 'Justice League' },
+    { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+    { id: 6, name: 'Aquaman', squad: 'Justice League' },
+    { id: 7, name: 'Hulk', squad: 'Avengers' },
+  ];
+ 
+
+  const findOne = function (arr, query)
+  {
+    let found =  arr.find(hero=>Object.keys(query).every(key => hero[key]===query[key]));
+    if (found)
+    {
+        return found;
+    } else
+    {
+        return 'null';
+    }
+  }
+
+  console.log(findOne(HEROES, { squad: 'Justice League'}));
+
+
+  const Database = {
+    store: {
+      heroes: [
+        { id: 1, name: 'Captain America', squad: 'Avengers' },
+        { id: 2, name: 'Iron Man', squad: 'Avengers' },
+        { id: 3, name: 'Spiderman', squad: 'Avengers' },
+        { id: 4, name: 'Superman', squad: 'Justice League' },
+        { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+        { id: 6, name: 'Aquaman', squad: 'Justice League' },
+        { id: 7, name: 'Hulk', squad: 'Avengers' },
+      ]
+    }
+  };
+
+  const findOneDB = function (Database, query)
+  {
+    let found =  Database.store.heroes.find(hero=>Object.keys(query).every(key => hero[key]===query[key]));
+    if (found)
+    {
+        return found;
+    } else
+    {
+        return 'null';
+    }
+  }
+
+
+  console.log(findOneDB(Database, { name: 'Iron Man'}));
