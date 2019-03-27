@@ -21,3 +21,7 @@ for (let x in probTwo){
     console.log(`${x} ${probTwo[x]}`); 
 }
 
+
+const meals =['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'];
+
+console.log(meals[3]);
