@@ -52,3 +52,30 @@ probFour.forEach(person => {
     }
     );
 
+let cipher = {
+    a : 1,
+    b : 2,
+    c : 3,
+    d : 4
+};
+
+function decoder (sentence) {
+    let eChars = [];
+    eChars = sentence.split(' ');
+    const dChars = eChars.map(function (char) {
+      if (cipher[char.charAt(0)]){
+        return char.charAt(cipher[char.charAt(0)]);
+      }
+      else {
+          return " ";
+      }
+
+    });
+    return dChars.join('');
+  }
+    
+  let eCode = 'craft block argon meter bells brown croon droop';
+  console.log(decoder(eCode));
+
+  
+  
