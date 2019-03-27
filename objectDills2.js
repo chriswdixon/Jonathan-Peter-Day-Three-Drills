@@ -19,3 +19,17 @@ function findById(items, idNum) {
   const found = items.filter(item => item.id === idNum);
   return found[0];
 }
+
+function validateKeys(object, expectedKeys) {
+  let objectKeys = [];
+  objectKeys = Object.keys(object)
+  if (objectKeys===expectedKeys)
+  { 
+    return true;
+  } else
+  {
+    return false;
+  }
+}
+
+
