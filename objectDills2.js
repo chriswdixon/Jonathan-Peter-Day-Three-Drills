@@ -13,3 +13,9 @@ function enrollInSummerSchool(students) {
   })
   return students;
 }
+
+function findById(items, idNum) {
+  let ret = {};
+  const found = items.filter(item => item.id === idNum);
+  return found[0];
+}
