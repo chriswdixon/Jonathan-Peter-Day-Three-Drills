@@ -7,4 +7,9 @@ function makeStudentsReport(data) {
   return grades;
 }
 
-
+function enrollInSummerSchool(students) {
+  students.forEach(function (student, index) {
+    students[index].status = "In Summer school"
+  })
+  return students;
+}
