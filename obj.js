@@ -25,3 +25,23 @@ for (let x in probTwo){
 const meals =['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper'];
 
 console.log(meals[3]);
+
+let Rich = {
+    name : 'richard',
+    jobTitle : 'thinkful teacher'
+};
+
+let Lauren = {
+    name : 'Lauren',
+    jobTitle : 'Thinkful Prog Manager'
+}; 
+
+let Jarod = {
+    name : 'Jarod',
+    jobTitle : 'Thinkful Mentor'
+};
+
+let probFour = [Rich, Lauren, Jarod];
+
+probFour.forEach(person => console.log(`${person.name} ${person.jobTitle}`));
+
