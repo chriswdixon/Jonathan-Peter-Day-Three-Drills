@@ -22,7 +22,7 @@ function findById(items, idNum) {
 
 function validateKeys(object, expectedKeys) {
   let objectKeys = [];
-  objectKeys = Object.keys(object)
+  objectKeys = Object.keys(object);
   if (objectKeys===expectedKeys)
   { 
     return true;
@@ -31,5 +31,7 @@ function validateKeys(object, expectedKeys) {
     return false;
   }
 }
+
+
 
 
