@@ -171,13 +171,7 @@ const HEROES = [
   const findOneDB = function (Database, query)
   {
     let found =  Database.store.heroes.find(hero=>Object.keys(query).every(key => hero[key]===query[key]));
-    if (found)
-    {
-        return found;
-    } else
-    {
-        return 'null';
-    }
+    return found ? found : "null";
   }
 
 
