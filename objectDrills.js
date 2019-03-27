@@ -10,3 +10,16 @@ function createMyObject() {
   };
   return myObject;
 }
+
+function updateObject(obj) {
+
+  const newObject = {
+    foo : 'foo',
+    bar : 'bar',
+    bizz : 'bizz',
+    bang : 'bang'
+  };
+
+  Object.assign(obj, newObject);
+  return obj;
+} 
