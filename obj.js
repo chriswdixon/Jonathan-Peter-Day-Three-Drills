@@ -77,5 +77,54 @@ function decoder (sentence) {
   let eCode = 'craft block argon meter bells brown croon droop';
   console.log(decoder(eCode));
 
-  
-  
+  function character(name, Nickname, Race, Origin, Attack, Defense) {
+    return {
+        name, Nickname, Race, Origin, Attack, Defense,
+
+        Weapon: {   
+            name: '',
+            description:''
+        },
+        describe: function() {
+            console.log( `${this.name} is a ${this.Race} from ${this.Origin}`);
+        },
+        evaluateFight: function (character)
+        {
+            //attack and defense values. If defense exceeds attack,
+            return `Your opponent takes ${this.actuallyFight(this.Attack, character.Defense)} damage and you receive 
+            ${this.actuallyFight(character.Attack, this.Defense)} damage`;
+        },
+        actuallyFight: function (attack, defense)
+        {
+            if (defense>=attack)
+                return 0;
+            
+            return attack-defense;
+        }
+    }
+}
+
+const arrayOfCharacters =   [
+['Gandalf the White ', 'gandalf' , 'Wizard', 'Middle Earth', 10, 6],
+['Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1 ],
+['Frodo Baggins', 'frodo', 'Hobbit', 'The Shire',3,2],
+['Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain',6,8],
+['Legolas', 'legolas','Elf','Woodland Realm',8,5]
+
+];
+
+let characters = [];
+
+arrayOfCharacters.forEach(char=>{
+
+    const newCharacter = character(...char);
+    characters.push(newCharacter)
+
+});
+
+const newCharacter = character('Arwen Undomiel', 'arwen', 'Half-Elf',  'Rivendell', 22, 22);
+characters.push(newCharacter);
+characters.find(char=>char.Nickname === 'aragorn').describe();
+let showOnlyHobbits = characters.filter(char=>char.Race==='Hobbit');
+let awesomeAttackers = characters.filter(char=>char.Attack > 5);
+
