@@ -28,20 +28,27 @@ console.log(meals[3]);
 
 let Rich = {
     name : 'richard',
-    jobTitle : 'thinkful teacher'
+    jobTitle : 'thinkful teacher',
+    boss: 'Jarod'
 };
 
 let Lauren = {
     name : 'Lauren',
     jobTitle : 'Thinkful Prog Manager'
+  
 }; 
 
 let Jarod = {
     name : 'Jarod',
-    jobTitle : 'Thinkful Mentor'
+    jobTitle : 'Thinkful Mentor',
+    boss: 'Lauren'
 };
 
 let probFour = [Rich, Lauren, Jarod];
 
-probFour.forEach(person => console.log(`${person.name} ${person.jobTitle}`));
+probFour.forEach(person => {
+    person.boss ? console.log(`"${person.jobTitle} ${person.name} reports to ${person.boss}."`)
+     : console.log(`"${person.jobTitle} ${person.name} doesn't report to anybody"`)
+    }
+    );
 
