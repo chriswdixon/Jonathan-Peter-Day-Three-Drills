@@ -23,3 +23,15 @@ function updateObject(obj) {
   Object.assign(obj, newObject);
   return obj;
 } 
+
+function personMaker() {
+  const person = {
+    firstName: 'Paul',
+    lastName: 'Jones',
+    fullName: function() {
+      return `${this.firstName} ${this.lastName}`;
+    },
+  };
+  return person;
+}
+
